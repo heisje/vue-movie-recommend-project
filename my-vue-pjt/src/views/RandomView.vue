@@ -22,7 +22,8 @@ export default {
     },
     methods: {
         getRandomMovie() {
-        this.movie = _.sample(this.$store.state.topRanked)
+            console.log(this.movie)
+            this.movie = _.sample(this.$store.state.topRanked)
         }
     }
 }

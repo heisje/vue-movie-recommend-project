@@ -1,13 +1,8 @@
 <template>
     <div>
-  
-      <h1>
         <p @click="check" :class="{'is-completed': stat}">
           {{movieTitle}}
         </p>
-      </h1>
-
-
     </div>
   </template>
   
@@ -54,5 +49,7 @@
   <style>
   .is-completed {
     text-decoration: line-through;
+    background-color: rgba(131, 136, 143, 0.212);
+    color: grey;
   }
 </style>
