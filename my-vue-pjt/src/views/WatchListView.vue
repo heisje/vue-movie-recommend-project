@@ -1,13 +1,13 @@
 <template>
     <div>
         <h1>Bogo Chiffon Movie</h1>
-        <input type="text"  v-model="inputTitle">
+        <input type="text"  v-model="inputTitle" @keyup.enter="addMovie">
         <input type="submit" value="Add" @click="addMovie">
 
         <WatchListForm/>
-        <WatchListItem/>
         <WatchListItem v-for="(movie,index) in bucketMovieList"
-        v-bind:key="index"/>
+        v-bind:key="index"
+        :movie-title='movie'/>
     </div>
 </template>
 
@@ -36,8 +36,11 @@ export default {
     },
     methods:{
         addMovie(){
-            this.$store.commit('addBucketMovies',this.inputTitle)
-            this.inputTitle=null
+            if (this.inputTitle){
+
+                this.$store.commit('addBucketMovies',this.inputTitle)
+                this.inputTitle=null
+            }
 
 
         },
