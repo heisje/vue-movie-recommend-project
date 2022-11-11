@@ -1,14 +1,15 @@
 <template>
   <div id="app">
-    <nav>
-      
-    </nav>
+  <nav>
+    <router-link :to="{ name: 'movie' }">Movie</router-link>
+    <router-link :to="{ name: 'random' }">Random</router-link>
+    <router-link :to="{ name: 'watchlist' }">WatchList</router-link>
+  </nav>
     <router-view/>
   </div>
 </template>
 
-<style lang="scss">
-@import 'bootstrap/scss/bootstrap';
+<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -19,11 +20,14 @@
 
 nav {
   padding: 30px;
+  background-color: black;
 }
 
 nav a {
   font-weight: bold;
   color: #2c3e50;
+  text-decoration: none;
+  margin-inline: 1rem;
 }
 
 nav a.router-link-exact-active {
