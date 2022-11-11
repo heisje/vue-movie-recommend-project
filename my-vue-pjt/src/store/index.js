@@ -6,7 +6,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    topRanked : null
+    topRanked : null,
+    bucketMovies : [],
   },
   getters: {
   },
@@ -22,6 +23,10 @@ export default new Vuex.Store({
       
       )
       
+    },
+    addBucketMovies(state, Title){
+      state.bucketMovies.push(Title)
+      console.log(state.bucketMovies)
     }
     
 

@@ -1,11 +1,13 @@
 <template>
     <div>
         <h1>Bogo Chiffon Movie</h1>
-        <input type="text">
-        <input type="submit" value="Add">
+        <input type="text"  v-model="inputTitle">
+        <input type="submit" value="Add" @click="addMovie">
 
         <WatchListForm/>
         <WatchListItem/>
+        <WatchListItem v-for="(movie,index) in bucketMovieList"
+        v-bind:key="index"/>
     </div>
 </template>
 
@@ -16,12 +18,17 @@ export default {
     name:'WatchListView',
     data(){
         return{
-            title: null,
+            inputTitle:null,
+       
         }
         
     },
     computed: {
 
+        bucketMovieList(){
+            return this.$store.state.bucketMovies
+        }
+    
     },
     components:{
         WatchListForm,
@@ -29,6 +36,8 @@ export default {
     },
     methods:{
         addMovie(){
+            this.$store.commit('addBucketMovies',this.inputTitle)
+            this.inputTitle=null
 
 
         },
