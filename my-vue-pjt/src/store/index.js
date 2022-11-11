@@ -13,7 +13,7 @@ export default new Vuex.Store({
   },
   mutations: {
     getTopMovies(state){
-      axios.get('https://api.themoviedb.org/3/movie/top_rated?api_key=642cc263c19a3b2f7ab3f2c988a752ab&language=en-US&page=1')
+      axios.get('https://api.themoviedb.org/3/movie/top_rated?api_key=642cc263c19a3b2f7ab3f2c988a752ab&language=ko-KR&page=1')
       .then( result=>{
         console.log(result)
         console.log(result.data.results)
