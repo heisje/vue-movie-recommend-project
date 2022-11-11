@@ -1,14 +1,12 @@
 <template>
     <div>
-        <button @click="getRandomMovie">PICK ME PICK ME PICK ME UP</button>
         <div class="d-grid gap-4 col-4 mx-auto">
-            <div v-if="movie" class="card" style="width: 100%;">
-                <img :src="`https://image.tmdb.org/t/p/original/${ movie.poster_path }`" class="card-img-top" alt="PICK A MOVIE">
-            <div class="card-body">
-                <h4 class="card-title fw-bold">{{ movie.title }}</h4>
-            </div>
-      </div>          
-    </div>
+            <button class="btn btn-outline-secondary" @click="getRandomMovie">PICK</button>
+            <div v-if="movie" style="width: 100%;">
+                <img :src="`https://image.tmdb.org/t/p/original/${ movie.poster_path }`" style="width: 100%;" alt="PICK A MOVIE">
+                <h4 style="margin-top:1rem;">{{ movie.title }}</h4>
+            </div>          
+        </div>
     </div>
 </template>
 
@@ -31,4 +29,7 @@ export default {
 </script>
 
 <style>
+.btn {
+  margin-top: 1rem;  
+}
 </style>
