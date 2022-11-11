@@ -1,12 +1,12 @@
 <template>
-    <div>
-        <h1>RandomView</h1>
-    </div>
+  <div>
+    <h1>MovieCard</h1>
+  </div>
 </template>
 
 <script>
 export default {
-    name:'RandomView',
+    name:'MovieCard'
 }
 </script>
 
