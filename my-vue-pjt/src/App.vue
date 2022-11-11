@@ -9,6 +9,35 @@
   </div>
 </template>
 
+
+
+<script>
+export default {
+
+    data(){
+        return {
+
+
+        }
+    },
+    components:{
+
+    },
+    methods: {
+
+        
+
+
+    },
+    created(){
+      this.$store.commit('getTopMovies')
+    }
+
+}
+
+</script>
+
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
