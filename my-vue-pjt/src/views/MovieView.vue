@@ -2,7 +2,10 @@
     <div>
         <h1>MovieView</h1>
         <button @click="test">adaf</button>
-        <MovieCard/>
+        {{  }}
+        <article v-for="(value, index) in topRanked" :key="index">
+            <MovieCard :movie-data="value"/>
+        </article>
     </div>
 </template>
 
@@ -21,12 +24,14 @@ export default {
     },
     methods: {
         test(){
-            this.$store.dispatch('getTopMovies')
+            this.$store.commit('getTopMovies')
         }
-        
-
-
     },
+    computed:{
+        topRanked(){
+            return this.$store.state.topRanked
+        }
+    }
 }
 </script>
 
