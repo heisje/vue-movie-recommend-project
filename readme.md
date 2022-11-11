@@ -83,21 +83,14 @@
           console.log(result)
           console.log(result.data.results)
           state.topRanked=result.data.results
-  
-        }
-        
-        )
-        
+        })
       },
       addBucketMovies(state, Title){
         state.bucketMovies.push(Title)
         console.log(state.bucketMovies)
       }
-      
-  
     },
     actions: {
-  
     },
     modules: {
     }
@@ -108,6 +101,7 @@
   - 내가 생각하는 이 문제의 포인트
     - vuex 의 동작 과정을 이해하고 각각 목적에 맞는 요소를 활용하는 것이 중요하다.
     - 기본적인 router 사용 문법을 익힌다.
+    - URL구조 생성
 
 ---
 
@@ -131,7 +125,6 @@
                   <MovieCard :movie-data="value" class="col"/>
               </article>
           </div>
-  
       </div>
   </template>
   
@@ -153,20 +146,14 @@
               return this.$store.state.topRanked
           }
       }
-  
   }
   </script>
-  
-  <style>
-  
-  </style>
   ```
-
-  - 이 문제에서 어려웠던점
-    - 
+  
   - 내가 생각하는 이 문제의 포인트
     - 영화 목록을 처음에 한 번만 불러오는 것
-    - 
+    - 데이터를 가공하여 v-for로 props를 전달하는 것
+    - computed로 store데이터를 연동시키는 것
 
 ---
 
@@ -262,16 +249,12 @@
       data(){
           return{
               inputTitle:null,
-         
           }
-          
       },
       computed: {
-  
           bucketMovieList(){
               return this.$store.state.bucketMovies
           }
-      
       },
       components:{
           WatchListForm,
@@ -284,18 +267,12 @@
                   this.$store.commit('addBucketMovies',this.inputTitle)
                   this.inputTitle=null
               }
-  
-  
           },
       }
   }
   </script>
-  
-  <style>
-  
-  </style>
   ```
-
+  
   - 이 문제에서 어려웠던점
   - 내가 생각하는 이 문제의 포인트
     - 부모 컴포넌트에서 반복문으로 받아온 내용을 사용하는 것
@@ -308,4 +285,4 @@
 
 * 도원 : 버스 너무 편하다
 * 보경 : 김희제 똥
-* 희제 :
+* 희제 : git을 사용하는 법이 어려웠다. 충돌 문제로 git reset --hard를 여러번 사용하다보니 branch의 필요성을 느꼈고, 더 공부를 해야겠다고 생각했다.
