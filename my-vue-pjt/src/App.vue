@@ -25,9 +25,10 @@ nav {
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #ecf2f8;
   text-decoration: none;
   margin-inline: 1rem;
+  float: right;
 }
 
 nav a.router-link-exact-active {
