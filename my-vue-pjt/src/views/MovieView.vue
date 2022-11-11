@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>MovieView</h1>
-        <button @click="test">adaf</button>
+
         <MovieCard/>
     </div>
 </template>
@@ -20,13 +20,10 @@ export default {
         MovieCard,
     },
     methods: {
-        test(){
-            this.$store.dispatch('getTopMovies')
-        }
-        
 
 
     },
+
 }
 </script>
 
